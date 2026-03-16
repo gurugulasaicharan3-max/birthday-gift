@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Sanjana</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Dancing Script',cursive;
+color:white;
+text-align:center;
+overflow:hidden;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+
+/* colorful animated background */
+
+background: linear-gradient(-45deg,#ff7eb3,#87cefa,#ffd700,#ff9a00);
+background-size:400% 400%;
+animation:bgmove 12s infinite ease;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+.section{
+display:none;
+max-width:420px;
+padding:20px;
+}
+
+.active{
+display:block;
+}
+
+/* balloons */
+
+.balloon{
+position:absolute;
+bottom:-120px;
+font-size:40px;
+animation:rise 10s linear infinite;
+}
+
+@keyframes rise{
+0%{transform:translateY(0)}
+100%{transform:translateY(-120vh)}
+}
+
+/* flower petals */
+
+.petal{
+position:absolute;
+top:-20px;
+font-size:20px;
+animation:fall 8s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh) rotate(0)}
+100%{transform:translateY(110vh) rotate(360deg)}
+}
+
+/* headings */
+
+h1{
+font-size:42px;
+}
+
+/* button */
+
+button{
+margin-top:25px;
+padding:14px 26px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4081;
+cursor:pointer;
+box-shadow:0 0 15px rgba(255,255,255,0.8);
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+/* gift box */
+
+.giftbox{
+font-size:100px;
+cursor:pointer;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+}
+
+/* gifts */
+
+.gifts{
+font-size:100px;
+margin:20px 0;
+}
+
+/* cake */
+
+.cake{
+font-size:120px;
+}
+
+.candle{
+font-size:45px;
+animation:glow 1s infinite alternate;
+}
+
+@keyframes glow{
+from{opacity:0.5}
+to{opacity:1}
+}
+
+/* letter */
+
+.letter{
+background:rgba(255,255,255,0.2);
+padding:20px;
+border-radius:15px;
+font-size:20px;
+line-height:1.8;
+}
+
+/* secret */
+
+.secret{
+display:none;
+margin-top:20px;
+font-size:24px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- background music -->
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_2f6c6f7a43.mp3">
+</audio>
+
+<!-- balloons -->
+
+<div class="balloon" style="left:10%">🎈</div>
+<div class="balloon" style="left:25%;animation-delay:2s">🎈</div>
+<div class="balloon" style="left:40%;animation-delay:4s">🎈</div>
+<div class="balloon" style="left:60%;animation-delay:1s">🎈</div>
+<div class="balloon" style="left:80%;animation-delay:3s">🎈</div>
+
+<!-- petals -->
+
+<div class="petal" style="left:20%">🌸</div>
+<div class="petal" style="left:40%;animation-delay:2s">🌸</div>
+<div class="petal" style="left:70%;animation-delay:4s">🌸</div>
+
+<!-- PAGE 1 -->
+
+<div id="page1" class="section active">
+
+<h1>Happy Birthday Sanjana 🎉</h1>
+
+<p>Today is a day to celebrate someone truly special.</p>
+
+<div class="giftbox" onclick="nextPage(2)">🎁</div>
+
+<p>Tap the gift to receive your birthday present</p>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div id="page2" class="section">
+
+<h1>Your Birthday Gifts</h1>
+
+<div class="gifts">
+🌹 🍫 🍨
+</div>
+
+<p>Flowers, chocolates and ice cream for someone who deserves sweet moments today.</p>
+
+<button onclick="nextPage(3)">Next Surprise ✨</button>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div id="page3" class="section">
+
+<h1>Your Birthday Cake 🎂</h1>
+
+<div class="cake">🎂</div>
+
+<div class="candle">🕯 🕯 🕯</div>
+
+<p>Blow the candles and make a wish ✨</p>
+
+<button onclick="nextPage(4)">Blow the Candles 💨</button>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div id="page4" class="section">
+
+<h1>Your Birthday Letter 💌</h1>
+
+<div class="letter">
+
+<p>
+
+Dear Sanjana,
+
+Today is a beautiful day because it marks the moment someone truly wonderful came into this world.
+
+There are some people who quietly make life brighter just by being themselves, and you are one of those rare people.
+
+The way you bring warmth into conversations and the way people naturally feel happier around you is something really special.
+
+You might not always notice it, but your presence can turn ordinary moments into something memorable.
+
+Personally, your presence has a way of making my days feel lighter and happier. It’s one of those little things that quietly makes life feel more beautiful.
+
+I hope this birthday brings you the same joy that you bring to the people around you every single day.
+
+You deserve laughter that never ends, dreams that come true, and moments that stay in your heart forever.
+
+Happy Birthday once again, Sanjana.
+
+</p>
+
+</div>
+
+<button onclick="showSecret()">One Last Surprise 💖</button>
+
+<div class="secret" id="secret">
+
+Some people make the world brighter just by existing…  
+and you are definitely one of them, Sanjana. ✨
+
+</div>
+
+</div>
+
+<script>
+
+function nextPage(num){
+
+document.querySelectorAll(".section").forEach(s=>{
+s.classList.remove("active");
+});
+
+document.getElementById("page"+num).classList.add("active");
+
+}
+
+function showSecret(){
+document.getElementById("secret").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
